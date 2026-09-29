@@ -273,6 +273,13 @@ table.otc{width:100%; border-collapse:collapse; background:#fff; border:1px soli
 .fnote.bad{color:var(--red);}
 
 footer{background:radial-gradient(900px 260px at 85% 0%,rgba(80,110,220,.35),transparent 70%),linear-gradient(100deg,#0A1330 0%,#132456 55%,#22356D 100%); color:#93A0C2; padding:30px 0 22px; font-size:.88rem;}
+.cookiebar{position:fixed; left:16px; right:16px; bottom:-140px; z-index:80; background:#0F1B3D; border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:16px 18px; box-shadow:0 12px 32px rgba(5,10,30,.4); display:flex; flex-direction:column; gap:12px; transition:bottom .45s ease; max-width:640px; margin:0 auto;}
+.cookiebar.show{bottom:16px;}
+.cookiebar p{margin:0; color:#DCE4F8; font-size:.85rem; line-height:1.5;}
+.cookiebar p a{color:#8FB4FF;}
+.cookiebtns{display:flex; gap:10px; justify-content:flex-end;}
+.cookiebtns .btn{padding:8px 16px; font-size:.85rem;}
+@media(max-width:520px){.cookiebtns{justify-content:stretch;} .cookiebtns .btn{flex:1;}}
 .foot{display:flex; flex-direction:column; gap:22px;}
 .foot-main{display:flex; flex-direction:column; align-items:flex-start; gap:22px;}
 .foot .brand{color:#fff;}
@@ -588,8 +595,29 @@ footer .bt small{font-size:.66rem; letter-spacing:.6px; font-weight:500; margin-
   <a class="d" href="#contact">Book demo</a>
 </div>
 
+<div class="cookiebar" id="cookiebar" role="dialog" aria-label="Cookie notice">
+  <p>We use cookies to run this site and understand how it's used. See our <a href="/privacy">Privacy Policy</a>.</p>
+  <div class="cookiebtns">
+    <button class="btn btn-light" id="cookieDecline" type="button">Decline</button>
+    <button class="btn btn-primary" id="cookieAccept" type="button">Accept</button>
+  </div>
+</div>
+
 <script>
 (function(){
+  // Cookie notice
+  try{
+    var bar=document.getElementById('cookiebar');
+    if(!localStorage.getItem('aivora_cookie_choice')){
+      setTimeout(function(){bar.classList.add('show');},600);
+    }
+    function setChoice(v){
+      try{localStorage.setItem('aivora_cookie_choice',v);}catch(e){}
+      bar.classList.remove('show');
+    }
+    document.getElementById('cookieAccept').addEventListener('click',function(){setChoice('accepted');});
+    document.getElementById('cookieDecline').addEventListener('click',function(){setChoice('declined');});
+  }catch(e){}
   // Mobile menu
   var burger=document.getElementById('burger'), mm=document.getElementById('mmenu');
   burger.addEventListener('click',function(){
