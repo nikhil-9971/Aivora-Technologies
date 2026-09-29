@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#F5F7FB">
 <meta name="description" content="AIVORA by Aivora Technologies — Business Management &amp; ERP Software Platform. Build Once. Scale Everywhere.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aivora Technologies — Business Management &amp; ERP Software Platform">
+<meta property="og:description" content="Gym ERP + CRM built in-house: members, payments, attendance, renewals, reports and AI — all in one place. Build Once. Scale Everywhere.">
+<meta property="og:image" content="https://www.aivora.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aivora Technologies — Business Management &amp; ERP Software Platform">
+<meta name="twitter:description" content="Gym ERP + CRM built in-house: members, payments, attendance, renewals, reports and AI — all in one place.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 80'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='.2' x2='1' y2='.8'%3E%3Cstop offset='0' stop-color='%2300B4FF'/%3E%3Cstop offset='1' stop-color='%237C3AED'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23g)' d='M6 69 L38 14 C42 8 47 5 51 5 C56 5 60 8 63 14 L91 66 C86 70 79 70.5 73 67 C68 64.5 65 61 62.5 56 L52 35 L37 60 C33 66 27 70 19 70 Z'/%3E%3C/svg%3E">
 <title>Aivora Technologies — Business Management &amp; ERP Software Platform</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -278,8 +285,13 @@ footer .bt small{font-size:.66rem; letter-spacing:.6px; font-weight:500; margin-
 .fp svg{width:26px; height:26px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round;}
 .fp span{color:#DCE4F8;}
 .fp:hover{transform:translateY(-3px);}
+.foot-cols{display:grid; grid-template-columns:repeat(2,1fr); gap:22px 16px; border-top:1px solid rgba(255,255,255,.12); padding-top:22px;}
+.fcol{display:flex; flex-direction:column; gap:9px; font-size:.85rem;}
+.fcol b{color:#fff; font-family:'Manrope',sans-serif; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; margin-bottom:2px;}
+.fcol a{color:#B5C0DE; text-decoration:none;}
+.fcol a:hover{color:#fff;}
 .foot-bot{border-top:1px solid rgba(255,255,255,.12); padding-top:14px; font-size:.82rem;}
-@media(min-width:960px){.foot-main{flex-direction:row; align-items:center; justify-content:space-between; gap:34px;} .fdiv{display:block;} .fprods{width:auto; grid-template-columns:repeat(6,64px);}}
+@media(min-width:960px){.foot-main{flex-direction:row; align-items:center; justify-content:space-between; gap:34px;} .fdiv{display:block;} .fprods{width:auto; grid-template-columns:repeat(6,64px);} .foot-cols{grid-template-columns:repeat(4,1fr);}}
 
 /* MOBILE ACTION BAR */
 .mbar{position:fixed; left:0; right:0; bottom:0; z-index:70; display:grid; grid-template-columns:1fr 1fr 1.3fr; gap:8px; padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px)); background:rgba(255,255,255,.95); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-top:1px solid var(--line);}
@@ -291,21 +303,6 @@ footer .bt small{font-size:.66rem; letter-spacing:.6px; font-weight:500; margin-
 @media(max-width:899px){body{padding-bottom:74px;}}
 
 
-/* DEVELOPER MODE */
-.devlink{background:none; border:none; color:#93A0C2; font:inherit; text-decoration:underline; cursor:pointer; padding:6px 2px;}
-.devlink:hover{color:#fff;}
-.devbar{position:fixed; z-index:90; left:12px; right:12px; bottom:calc(84px + env(safe-area-inset-bottom,0px)); margin:0 auto; max-width:560px; background:var(--navy); color:#fff; border:1px solid rgba(255,255,255,.16); border-radius:16px; padding:14px 16px; box-shadow:0 24px 50px -16px rgba(0,0,0,.6); display:none;}
-.devbar.show{display:block;}
-@media(min-width:900px){.devbar{bottom:20px;}}
-.devbar b{font-family:'Manrope',sans-serif;}
-.devbar p{font-size:.86rem; color:#B9C6E6; margin-top:4px;}
-.devbar .st{margin-top:8px; font-size:.84rem; font-weight:600; color:#FFC65A;}
-.devbar .st.bad{color:#FF8A80;} .devbar .st.good{color:#7BE0A3;}
-.devbtns{display:flex; gap:8px; margin-top:12px; flex-wrap:wrap;}
-.devbtns .btn{min-height:42px; padding:0 18px; font-size:.88rem;}
-.devbtns .btn-light{background:transparent; color:#fff; border-color:rgba(255,255,255,.3);}
-body.devmode [data-slot]{cursor:pointer; outline:3px dashed var(--amber); outline-offset:-3px; transition:filter .2s ease;}
-body.devmode [data-slot]:hover{filter:brightness(.75);}
 
 /* MOTION */
 .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease;}
@@ -399,7 +396,7 @@ body.devmode [data-slot]:hover{filter:brightness(.75);}
   <div class="wrap about-grid">
     <div class="reveal">
       <h2 class="title">About Aivora Technologies</h2>
-      <p class="big">Aivora Technologies is a business management and ERP software platform company based in Lucknow, building production-grade systems for real businesses — not templated products dressed up as custom work.</p>
+      <p class="big">Aivora Technologies is a business management and ERP software platform company based in Lucknow, building real, working ERP systems for real businesses — not templated products dressed up as custom work.</p>
       <p>Our flagship, Aivora Gym ERP, and its connected CRM were designed and built end-to-end in-house: the database, the security layer, the automated emails, the AI assistant. It runs live today, handling real members, real payments and real renewals. <b>Build once:</b> one secure core. <b>Scale everywhere:</b> every gym, plan and branch managed from one CRM.</p>
     </div>
     <div class="founder reveal">
@@ -575,21 +572,15 @@ body.devmode [data-slot]:hover{filter:brightness(.75);}
       <div class="foot-mid"><span class="fdiv"></span><p>One Platform.<br>Multiple Industries.</p></div>
       <nav class="fprods" aria-label="Aivora products"><a class="fp" href="#product" style="--c:#8B6CFF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg><span>Gym</span></a><a class="fp" href="#product" style="--c:#1FA6FF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5M22 10v6"/></svg><span>School</span></a><a class="fp" href="#product" style="--c:#2FD07A"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/><path d="M3.5 12h4l1.5-3 3 6 1.5-3h4"/></svg><span>Health</span></a><a class="fp" href="#product" style="--c:#FF9A2E"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>People</span></a><a class="fp" href="#product" style="--c:#FF5F6D"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg><span>Retail</span></a><a class="fp" href="#product" style="--c:#25C2D9"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg><span>CRM</span></a></nav>
     </div>
-    <div class="foot-bot">© 2026 Aivora Technologies · Lucknow · <button class="devlink" id="devLogin" type="button">Developer login</button></div>
+    <div class="foot-cols">
+      <div class="fcol"><b>Product</b><a href="#product">Gym ERP</a><a href="#product">CRM</a><a href="#features">Features</a><a href="#pricing">Pricing</a></div>
+      <div class="fcol"><b>Company</b><a href="#about">About</a><a href="#reviews">Reviews</a></div>
+      <div class="fcol"><b>Contact</b><a href="tel:8126214334">81262 14334</a><a href="mailto:nikhiltrivedi9971@gmail.com">Email us</a><a href="https://wa.me/918126214334" target="_blank" rel="noopener">WhatsApp</a></div>
+      <div class="fcol"><b>Legal</b><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="refund.html">Refund &amp; Cancellation</a></div>
+    </div>
+    <div class="foot-bot">© 2026 Aivora Technologies · Lucknow</div>
   </div>
 </footer>
-
-
-<div class="devbar" id="devbar" role="dialog" aria-label="Developer mode">
-  <b>Developer mode</b>
-  <p>Tap any image with a dashed outline to replace it, then press Publish.</p>
-  <div class="st" id="devst"></div>
-  <div class="devbtns">
-    <button class="btn btn-primary" id="devPub" type="button" disabled>Publish changes</button>
-    <button class="btn btn-light" id="devExit" type="button">Exit &amp; discard</button>
-  </div>
-  <input type="file" id="devFile" accept="image/*" hidden>
-</div>
 
 <div class="mbar">
   <a class="c" href="tel:8126214334"><svg class="icon" style="width:18px;height:18px"><use href="#i-call"/></svg>Call</a>
@@ -599,7 +590,6 @@ body.devmode [data-slot]:hover{filter:brightness(.75);}
 
 <script>
 (function(){
-  var BASE='<!DOCTYPE html>\n'+document.documentElement.outerHTML;
   // Mobile menu
   var burger=document.getElementById('burger'), mm=document.getElementById('mmenu');
   burger.addEventListener('click',function(){
@@ -636,56 +626,6 @@ body.devmode [data-slot]:hover{filter:brightness(.75);}
   });
 
 
-  // Developer login + image editor (owner only, real check by the platform)
-  var dev={on:false, slot:null, changes:{}};
-  var st=function(t,c){var e=document.getElementById('devst'); e.textContent=t; e.className='st '+(c||'');};
-  function timeout(ms){return new Promise(function(_,r){setTimeout(function(){r(new Error('timeout'));},ms);});}
-  document.getElementById('devLogin').addEventListener('click',async function(){
-    var bar=document.getElementById('devbar'); bar.classList.add('show');
-    if(dev.on) return;
-    st('Checking developer access…');
-    if(!window.claude||!window.claude.use){st('Developer login works only on the claude.ai-hosted page, while you are signed in as the owner.','bad'); return;}
-    try{
-      var user=await Promise.race([window.claude.use('user'),timeout(6000)]);
-      var ok=user?await user.isOwner():false;
-      if(!ok){st('Access denied. Only the site owner (signed in to Claude) can edit.','bad'); return;}
-      dev.on=true; document.body.classList.add('devmode'); st('Logged in as owner. Tap an image to replace it.','good');
-    }catch(e){st('Could not verify access. Open the page while signed in to Claude and try again.','bad');}
-  });
-  document.addEventListener('click',function(e){
-    if(!dev.on) return; var t=e.target.closest('[data-slot]'); if(!t) return;
-    e.preventDefault(); dev.slot=t.getAttribute('data-slot'); document.getElementById('devFile').value=''; document.getElementById('devFile').click();
-  });
-  document.getElementById('devFile').addEventListener('change',function(){
-    var f=this.files&&this.files[0]; if(!f||!dev.slot) return; var slot=dev.slot;
-    if(!/^image\//.test(f.type)){st('Please choose an image file.','bad'); return;}
-    var img=new Image(), url=URL.createObjectURL(f);
-    img.onload=function(){
-      var c=document.createElement('canvas'), x=c.getContext('2d'), w=img.naturalWidth, h=img.naturalHeight;
-      if(slot==='founder'){var side=Math.min(w,h); c.width=c.height=320; x.drawImage(img,(w-side)/2,(h-side)*0.25,side,side,0,0,320,320);}
-      else{var s=Math.min(1,1000/w); c.width=Math.round(w*s); c.height=Math.round(h*s); x.drawImage(img,0,0,c.width,c.height);}
-      var data=c.toDataURL('image/jpeg',0.75); URL.revokeObjectURL(url);
-      document.querySelectorAll('[data-slot="'+slot+'"]').forEach(function(i){i.src=data; i.removeAttribute('loading');});
-      dev.changes[slot]=data; var n=Object.keys(dev.changes).length;
-      st(n+' image'+(n>1?'s':'')+' changed. Press Publish to make it live.'); document.getElementById('devPub').disabled=false;
-    };
-    img.onerror=function(){st('That image could not be read.','bad');}; img.src=url;
-  });
-  document.getElementById('devPub').addEventListener('click',async function(){
-    var btn=this; btn.disabled=true; st('Publishing…');
-    try{
-      var doc=new DOMParser().parseFromString(BASE,'text/html');
-      Object.keys(dev.changes).forEach(function(s){doc.querySelectorAll('[data-slot="'+s+'"]').forEach(function(i){i.setAttribute('src',dev.changes[s]); i.removeAttribute('loading');});});
-      var art=await window.claude.use('artifact');
-      await art.publish('<!DOCTYPE html>\n'+doc.documentElement.outerHTML);
-      st('Published. The page is reloading with your new images…','good');
-    }catch(e){
-      var code=e&&e.code; btn.disabled=false;
-      if(code==='conflict') return;
-      st(code==='not_writer'||code==='not_granted'?'You do not have permission to publish this page.':code==='too_large'?'Images are too large. Use smaller images.':code==='consent_required'?'Approve the permission prompt, then press Publish again.':'Publish failed. Please try again.','bad');
-    }
-  });
-  document.getElementById('devExit').addEventListener('click',function(){location.reload();});
   // Lead form
   window.sendLead=function(channel){
     var g=function(id){return document.getElementById(id);};
