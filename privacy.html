@@ -25,15 +25,20 @@ ul{padding-left:22px;}
 a{color:#2450E8;}
 .notice{background:#FFF7E6; border:1px solid #F5D98B; border-radius:10px; padding:14px 16px; font-size:.88rem; color:#7A5B00; margin-bottom:32px;}
 .back{display:inline-block; margin-top:40px; color:#2450E8; text-decoration:none; font-weight:600;}
-.cookiebar{position:fixed; left:16px; right:16px; bottom:-140px; z-index:80; background:#0F1B3D; border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:16px 18px; box-shadow:0 12px 32px rgba(5,10,30,.4); display:flex; flex-direction:column; gap:12px; transition:bottom .45s ease; max-width:640px; margin:0 auto; font-family:'Inter',sans-serif;}
-.cookiebar.show{bottom:16px;}
-.cookiebar p{margin:0; color:#DCE4F8; font-size:.85rem; line-height:1.5;}
-.cookiebar p a{color:#8FB4FF;}
-.cookiebtns{display:flex; gap:10px; justify-content:flex-end;}
-.cookiebtns .btn{padding:8px 16px; font-size:.85rem; border-radius:8px; border:1px solid transparent; cursor:pointer; font-weight:600;}
-.cookiebtns .btn-primary{background:#2450E8; color:#fff;}
-.cookiebtns .btn-light{background:transparent; color:#DCE4F8; border-color:rgba(255,255,255,.25);}
-@media(max-width:520px){.cookiebtns{justify-content:stretch;} .cookiebtns .btn{flex:1;}}
+/* COOKIE BAR */
+.cookiebar{position:fixed; left:0; right:0; bottom:0; z-index:80; background:#fff; border-top:1px solid #E2E8F3; box-shadow:0 -8px 30px rgba(11,23,48,.08); font-family:'Inter',sans-serif; padding:18px max(20px,calc((100vw - 960px)/2 + 20px)) calc(18px + env(safe-area-inset-bottom,0px)); display:flex; align-items:center; justify-content:space-between; gap:32px; transform:translateY(110%); visibility:hidden; transition:transform .45s ease, visibility 0s .45s;}
+.cookiebar.show{transform:translateY(0); visibility:visible; transition:transform .45s ease, visibility 0s;}
+.cookiebar p{margin:0; flex:1; max-width:780px; color:#5B6787; font-size:.9rem; line-height:1.6;}
+.cookiebar p a{color:#0B1730; font-weight:700; text-decoration:none;}
+.cookiebar p a:hover{color:#2450E8; text-decoration:underline;}
+.cookiebtns{display:flex; gap:12px; flex-shrink:0;}
+.cookiebtns .btn{min-height:40px; padding:0 22px; font-size:.88rem; border-radius:8px;}
+@media(max-width:700px){.cookiebar{flex-direction:column; align-items:stretch; gap:14px; padding-left:20px; padding-right:20px;} .cookiebtns .btn{flex:1;}}
+.cookiebtns .btn{border:1.5px solid transparent; cursor:pointer; font-family:'Manrope',sans-serif; font-weight:700; transition:background .2s, transform .2s;}
+.cookiebtns .btn:hover{transform:translateY(-2px);}
+.cookiebtns .btn-primary{background:#2450E8; color:#fff; box-shadow:0 10px 24px -10px rgba(36,80,232,.6);}
+.cookiebtns .btn-primary:hover{background:#1B3CB8;}
+.cookiebtns .btn-light{background:#fff; color:#0B1730; border-color:#E2E8F3;}
 </style>
 </head>
 <body>
@@ -78,7 +83,7 @@ Location: Lucknow, Uttar Pradesh, India</p>
 </main>
 
 <div class="cookiebar" id="cookiebar" role="dialog" aria-label="Cookie notice">
-  <p>We use cookies to run this site and understand how it's used. See our <a href="/privacy">Privacy Policy</a>.</p>
+  <p>We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept", you consent to our use of cookies. <a href="/privacy">Read our Privacy Policy</a></p>
   <div class="cookiebtns">
     <button class="btn btn-light" id="cookieDecline" type="button">Decline</button>
     <button class="btn btn-primary" id="cookieAccept" type="button">Accept</button>
