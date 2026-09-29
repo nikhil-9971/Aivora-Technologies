@@ -25,6 +25,15 @@ ul{padding-left:22px;}
 a{color:#2450E8;}
 .notice{background:#FFF7E6; border:1px solid #F5D98B; border-radius:10px; padding:14px 16px; font-size:.88rem; color:#7A5B00; margin-bottom:32px;}
 .back{display:inline-block; margin-top:40px; color:#2450E8; text-decoration:none; font-weight:600;}
+.cookiebar{position:fixed; left:16px; right:16px; bottom:-140px; z-index:80; background:#0F1B3D; border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:16px 18px; box-shadow:0 12px 32px rgba(5,10,30,.4); display:flex; flex-direction:column; gap:12px; transition:bottom .45s ease; max-width:640px; margin:0 auto; font-family:'Inter',sans-serif;}
+.cookiebar.show{bottom:16px;}
+.cookiebar p{margin:0; color:#DCE4F8; font-size:.85rem; line-height:1.5;}
+.cookiebar p a{color:#8FB4FF;}
+.cookiebtns{display:flex; gap:10px; justify-content:flex-end;}
+.cookiebtns .btn{padding:8px 16px; font-size:.85rem; border-radius:8px; border:1px solid transparent; cursor:pointer; font-weight:600;}
+.cookiebtns .btn-primary{background:#2450E8; color:#fff;}
+.cookiebtns .btn-light{background:transparent; color:#DCE4F8; border-color:rgba(255,255,255,.25);}
+@media(max-width:520px){.cookiebtns{justify-content:stretch;} .cookiebtns .btn{flex:1;}}
 </style>
 </head>
 <body>
@@ -67,5 +76,24 @@ Location: Lucknow, Uttar Pradesh, India</p>
 
 <a class="back" href="/">← Back to home</a>
 </main>
+
+<div class="cookiebar" id="cookiebar" role="dialog" aria-label="Cookie notice">
+  <p>We use cookies to run this site and understand how it's used. See our <a href="/privacy">Privacy Policy</a>.</p>
+  <div class="cookiebtns">
+    <button class="btn btn-light" id="cookieDecline" type="button">Decline</button>
+    <button class="btn btn-primary" id="cookieAccept" type="button">Accept</button>
+  </div>
+</div>
+<script>
+(function(){
+  try{
+    var bar=document.getElementById('cookiebar');
+    if(!localStorage.getItem('aivora_cookie_choice')){ setTimeout(function(){bar.classList.add('show');},600); }
+    function setChoice(v){ try{localStorage.setItem('aivora_cookie_choice',v);}catch(e){} bar.classList.remove('show'); }
+    document.getElementById('cookieAccept').addEventListener('click',function(){setChoice('accepted');});
+    document.getElementById('cookieDecline').addEventListener('click',function(){setChoice('declined');});
+  }catch(e){}
+})();
+</script>
 </body>
 </html>
